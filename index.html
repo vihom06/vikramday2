@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"> <!-- External CSS -->
     <style>
         /* Fade-in animation */
         .fade-in {
@@ -50,11 +50,12 @@
             <p class="intro-text">Thanks for visiting! Here's a quick glimpse into my professional and personal life.
                 I'm passionate about learning, growing, and sharing what I discover.</p>
             <div class="media">
-                <img src="your-photo.jpeg" alt="Your Photo" class="profile-photo fade-in" width="200" height="200" />
+                <img src="your-photo.jpeg" alt="Your Photo" class="profile-photo fade-in" width="200" height="200">
                 <iframe width="250" height="200" class="fade-in" src="https://www.youtube.com/embed/Q4kR6vM8xvQ"
                     title="Motivational Speech by Sandeep Maheshwari" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
             </div>
         </section>
 
@@ -63,5 +64,71 @@
             <h2>About Me</h2>
             <p><strong>Name:</strong> Vikram Choudhary</p>
             <p><strong>Location:</strong> Vasai</p>
-            <p><strong>Education:</strong> ST. John College Of Engineering & Management<br />Branch: Computer Engineering</p>
-            <p><strong>Lang
+            <p><strong>Education:</strong> ST. John College Of Engineering & Management<br>Branch: Computer Engineering</p>
+            <p><strong>Languages Known:</strong> C, Python, C++</p>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section box fade-in">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Developed multiple apps using AR/VR and Android app development</li>
+                <li>Completed internship in AR and VR</li>
+            </ul>
+        </section>
+
+        <!-- Future Goals Section -->
+        <section id="goals" class="section box fade-in">
+            <h2>Future Goals</h2>
+            <p>I aim to become a Software Engineer and contribute to the development of scalable, secure, and
+                sustainable infrastructure.</p>
+        </section>
+
+        <!-- Personal Side Section -->
+        <section id="personal" class="section box fade-in">
+            <h2>Personal Side</h2>
+            <p><strong>Hobbies:</strong> Learning new things, reading books</p>
+            <p><strong>Role Model:</strong> Elon Musk</p>
+            <p><strong>Favorite Book:</strong> The Power of Subconscious Mind</p>
+            <p><strong>Favorite Website/Startup:</strong> Wix Studio</p>
+            <p><strong>Volunteering Experience:</strong> None yet</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section box fade-in">
+            <h2>Contact Me</h2>
+            <form action="https://formsubmit.co/vikramchoudhary3107@gmail.com" method="POST">
+                <label for="email">Your Email:</label><br>
+                <textarea name="email" id="email" rows="1" placeholder="vikramchoudhary3107@gmail.com"
+                    required></textarea><br><br>
+
+                <label for="message">Your Message:</label><br>
+                <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required>
+                </textarea><br><br>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+    </div>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        faders.forEach(fader => observer.observe(fader));
+    </script>
+
+</body>
+
+</html>
